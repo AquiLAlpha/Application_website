@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#avatsel1").click(function(){
+                $("input[type='file']").trigger('click');
+            });
+            $("#avatval").click(function(){
+                $("input[type='file']").trigger('click');
+            });
+            $("input[type='file']").change(function(){
+                $("#avatval").val($(this).val());
+            });
+        });
+    </script>
+    <LINK REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+    <title>Upload File</title>
+</head>
+<body>
+<p>
+    <a href="http://www.gcomtechnology.com/en/index.php">
+        <img alt="home" src="logo.png" class="logo">
+    </a>
+</p>
+<div class="container">
+    <div class="login">
+        <h1>Upload your Resume</h1>
+        <form id="upload_form" action="upload.php" method="post"
+              enctype="multipart/form-data">
+            <div class="input-file">
+                <input type="text" id="avatval" placeholder="Please select file" readonly="readonly" />
+                <input type="file" name="file" id="file" />
+                           
+            </div>
+
+            <br />
+            <input type="submit" name="submit" value="Submit" />
+            <a href="logout.php">Log Out</a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
